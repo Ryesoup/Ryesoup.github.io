@@ -40,6 +40,10 @@ body {
     background-color: white;
     transition: transform 0.3s;
 }
+.topbar:hover ~ .overlay {
+    display: block;
+}
+
 
 .dropdown {
     position: relative;
@@ -87,4 +91,14 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* 검은색 오버레이를 50% 투명도로 설정 */
+    z-index: 999; /* 상단바 아래, 다른 컨텐츠 위로 오게 합니다. */
+    display: none; /* 초기 상태는 보이지 않게 설정 */
 }
