@@ -24,8 +24,9 @@ body {
     text-decoration: none;
     padding: 0 15px;
     position: relative;
-    margin-right: 10px; /* 버튼 사이의 간격 조정 */
+    margin-right: 5px; /* 이 값을 줄여서 버튼 사이의 간격을 조정합니다. */
 }
+
 
 .topbar a:hover {
     color: gray;
