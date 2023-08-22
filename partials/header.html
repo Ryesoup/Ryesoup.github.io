@@ -1,8 +1,21 @@
 <div class="sidebar" id="mySidebar">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="/index.html">Home</a>
-    <a href="/html/blog.html">Blog</a>
-    <!-- 추후에 다른 페이지를 추가하면 여기에 네비게이션 아이템을 추가할 수 있습니다. -->
+    <div class="submenu">
+        <a href="/html/blog.html">Blog</a>
+        <div class="dropdown-content">
+            <a href="#">코딩</a>
+            <div class="sub-dropdown-content">
+                <a href="#">파이썬</a>
+                <a href="#">VBA</a>
+                <a href="#">애플스크립트</a>
+                <a href="#">자바</a>
+                <a href="#">C언어</a>
+            </div>
+            <a href="#">보안</a>
+            <a href="#">자격증</a>
+        </div>
+    </div>
 </div>
 
 <div class="menu-icon" onclick="openNav()">
