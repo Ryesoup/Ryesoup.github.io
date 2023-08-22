@@ -5,50 +5,17 @@ body {
     background-color: #f8f9fa;
 }
 
-.navbar {
-    margin-bottom: 20px;
-}
-
-.sidebar {
-    height: 100%;
-    width: 0;
+.header {
     position: fixed;
-    z-index: 1;
     top: 0;
-    left: 0;
+    width: 100%;
     background-color: white;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
-}
-
-.sidebar a {
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 25px;
-    color: black;  /* 텍스트 색상을 검은색으로 변경 */
-    display: block;
-    transition: 0.3s;
-}
-
-.sidebar a:hover {
-    color: #f1f1f1;
-    background-color: #555;  /* 호버 시의 배경색을 추가 */
-}
-
-.closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-.content {
-    margin-left: 0; 
-    padding: 1px 16px;
-    height: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .menu-icon {
@@ -56,49 +23,26 @@ body {
     cursor: pointer;
 }
 
-.navbar-brand {
-    font-size: 1.5em;
-    font-weight: bold;
+.menu-content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.nav-link {
-    font-size: 1.2em;
+.menu-content a {
+    padding: 10px 20px;
+    text-decoration: none;
+    color: black;
+    display: block;
 }
 
-.container h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.card-title {
-    font-size: 1.4em;
-}
-
-footer {
-    margin-top: 40px;
-    padding: 20px 0;
+.menu-content a:hover {
     background-color: #f5f5f5;
-    border-top: 1px solid #ddd;
 }
 
-/* Submenu Styles */
-
-.submenu a {
-    font-size: 25px;
-    display: block;
-    transition: 0.3s;
-}
-
-.submenu-items {
-    display: none;  /* 초기 상태에서 하위 메뉴 항목은 숨김 처리 */
-    transition: 0.3s;  /* 부드럽게 펼쳐지는 효과를 위한 transition */
-}
-
-.submenu:hover .submenu-items {
-    display: block;
-}
-
-.submenu-detail a {
-    font-size: 20px;
-    padding-left: 20px;
+.content {
+    padding-top: 60px;  /* Adjust based on the height of the fixed header */
 }

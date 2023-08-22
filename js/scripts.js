@@ -4,9 +4,9 @@ $(document).ready(function() {
 });
 
 function openNav() {
-    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("menuContent").style.display = "block";
 }
 
 function closeNav() {
-    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("menuContent").style.display = "none";
 }
