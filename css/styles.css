@@ -27,13 +27,13 @@ body {
     padding: 10px 15px;
     text-decoration: none;
     font-size: 25px;
-    color: #f1f1f1;
+    color: #000000;
     display: block;
     transition: 0.3s;
 }
 
 .sidebar a:hover {
-    color: #f1f1f1;
+    color: #707070;
 }
 
 .closebtn {
