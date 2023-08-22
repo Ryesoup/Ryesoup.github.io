@@ -7,27 +7,28 @@ body {
 
 .topbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding: 10px 5%;
     position: fixed;
     width: 100%;
     top: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.95); /* 흰색 배경 */
     transition: background-color 0.3s;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1); /* 상단바에 약간의 테두리 추가 */
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.topbar.scrolled {
-    background-color: rgba(0, 0, 0, 0.9);
 }
 
 .topbar a {
-    color: white;
+    color: black;
     text-decoration: none;
-    padding: 0 10px;
+    padding: 0 15px;
     position: relative;
+    margin-right: 10px; /* 버튼 사이의 간격 조정 */
+}
+
+.topbar a:hover {
+    color: gray;
 }
 
 .topbar a:hover::after {
@@ -37,13 +38,9 @@ body {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: white;
+    background-color: gray;
     transition: transform 0.3s;
 }
-.topbar:hover ~ .overlay {
-    display: block;
-}
-
 
 .dropdown {
     position: relative;
@@ -55,7 +52,7 @@ body {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.9);
     min-width: 160px;
-    left: 0;
+    left: 0;  
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -71,8 +68,23 @@ body {
     display: block;
 }
 
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 500;
+    display: none;
+}
+
+.dropdown:hover ~ .overlay {
+    display: block;
+}
+
 .content {
-    margin-top: 60px;
+    margin-top: 60px; 
 }
 
 footer {
@@ -91,14 +103,4 @@ footer a {
 
 footer a:hover {
     text-decoration: underline;
-}
-.overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* 검은색 오버레이를 50% 투명도로 설정 */
-    z-index: 999; /* 상단바 아래, 다른 컨텐츠 위로 오게 합니다. */
-    display: none; /* 초기 상태는 보이지 않게 설정 */
 }
