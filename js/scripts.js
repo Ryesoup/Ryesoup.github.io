@@ -3,10 +3,11 @@ $(document).ready(function() {
     $("#footer").load("/partials/footer.html");
 });
 
-function openNav() {
-    document.getElementById("menuContent").style.display = "block";
-}
-
-function closeNav() {
-    document.getElementById("menuContent").style.display = "none";
-}
+window.onscroll = function() {
+    const topbar = document.querySelector('.topbar');
+    if (window.scrollY > 50) {
+        topbar.classList.add('scrolled');
+    } else {
+        topbar.classList.remove('scrolled');
+    }
+};
