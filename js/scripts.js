@@ -4,11 +4,11 @@ $(document).ready(function() {
 });
 
 function openNav() {
-    $(".sidebar").css("width", "250px");
-    $(".container").css("margin-left", "250px");
+    document.getElementById("mySidebar").style.width = "250px";
+    document.querySelector(".content").style.marginLeft = "250px";
 }
 
 function closeNav() {
-    $(".sidebar").css("width", "0");
-    $(".container").css("margin-left", "0");
+    document.getElementById("mySidebar").style.width = "0";
+    document.querySelector(".content").style.marginLeft = "0";
 }

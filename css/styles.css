@@ -5,37 +5,6 @@ body {
     background-color: #f8f9fa;
 }
 
-.navbar {
-    margin-bottom: 20px;
-}
-
-.navbar-brand {
-    font-size: 1.5em;
-    font-weight: bold;
-}
-
-.nav-link {
-    font-size: 1.2em;
-}
-
-.container h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
-}
-
-.card-title {
-    font-size: 1.4em;
-}
-
-footer {
-    margin-top: 40px;
-    padding: 20px 0;
-    background-color: #f5f5f5;
-    border-top: 1px solid #ddd;
-}
-
-/* 사이드바 스타일 */
-
 .sidebar {
     height: 100%;
     width: 0;
@@ -77,3 +46,5 @@ footer {
     transition: margin-left .5s;
     padding: 20px;
 }
+
+/* 나머지 기존 스타일... */
