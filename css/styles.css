@@ -50,7 +50,7 @@ body {
     position: absolute;
     background-color: rgba(0, 0, 0, 0.9);
     min-width: 160px;
-    left: 0;  /* This ensures the dropdown starts from the left side of the parent item */
+    left: 0;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -67,7 +67,7 @@ body {
 }
 
 .content {
-    margin-top: 60px; /* 상단바의 높이만큼 컨텐츠의 상단 여백을 줍니다. */
+    margin-top: 60px;
 }
 
 footer {
