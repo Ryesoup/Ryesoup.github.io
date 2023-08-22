@@ -16,6 +16,7 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     transition: background-color 0.3s;
     z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .topbar.scrolled {
@@ -25,7 +26,7 @@ body {
 .topbar a {
     color: white;
     text-decoration: none;
-    padding: 0 15px;
+    padding: 0 10px;
     position: relative;
 }
 
