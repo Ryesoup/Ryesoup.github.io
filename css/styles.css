@@ -5,9 +5,13 @@ body {
     background-color: #f8f9fa;
 }
 
+.navbar {
+    margin-bottom: 20px;
+}
+
 .sidebar {
     height: 100%;
-    width: 0;
+    width: 0;  /* 초기에 사이드바는 보이지 않도록 설정합니다. */
     position: fixed;
     z-index: 1;
     top: 0;
@@ -16,13 +20,14 @@ body {
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.3);
 }
 
 .sidebar a {
-    padding: 10px 15px 10px 32px;
+    padding: 10px 15px;
     text-decoration: none;
     font-size: 25px;
-    color: #818181;
+    color: white;
     display: block;
     transition: 0.3s;
 }
@@ -31,20 +36,46 @@ body {
     color: #f1f1f1;
 }
 
-.menu-icon {
+.closebtn {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+.content {
+    margin-left: 0;  /* 초기에 사이드바가 닫혀있기 때문에 설정을 0으로 합니다. */
+    padding: 1px 16px;
+    height: 100%;
+}
+
+.menu-icon {
     font-size: 30px;
     cursor: pointer;
-    padding: 20px;
-    background-color: #111;
-    color: #fff;
 }
 
-.container {
-    transition: margin-left .5s;
-    padding: 20px;
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
 }
 
-/* 나머지 기존 스타일... */
+.nav-link {
+    font-size: 1.2em;
+}
+
+.container h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 1.4em;
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px 0;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+}
