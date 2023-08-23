@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 mainNav.classList.remove('active');
             });
         }
+    }
 
     // Dropdown functionality
     let dropdownTriggers = document.querySelectorAll('.dropdown > a, .nested-dropdown > a');
@@ -39,21 +40,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-});
 
-$(document).ready(function() {
-    $("#header").load("partials/header.html", function() {
-        window.onscroll = function() {
-            const topbar = document.querySelector('.topbar');
-            if (window.scrollY > 50) {
-                topbar.classList.add('scrolled');
-            } else {
-                topbar.classList.remove('scrolled');
-            }
-        };
-    });
+    // Scroll event for topbar
+    window.onscroll = function() {
+        const topbar = document.querySelector('.topbar');
+        if (window.scrollY > 50) {
+            topbar.classList.add('scrolled');
+        } else {
+            topbar.classList.remove('scrolled');
+        }
+    };
 
+    // Loading external HTML components
+    $("#header").load("partials/header.html");
     $("#footer").load("partials/footer.html");
-});
+
+});  // <--- 중괄호와 괄호를 추가하여 이벤트 리스너를 닫습니다.
 
 // You can continue with other scripts if any
