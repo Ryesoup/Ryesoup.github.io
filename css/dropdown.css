@@ -8,9 +8,9 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: #f1f1f1;
     min-width: 160px;
-    left: 0;
+    overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
@@ -35,14 +35,15 @@
 .nested-content {
     display: none;
     position: absolute;
-    left: 100%;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: #f1f1f1;
     min-width: 160px;
+    overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 2;
+    z-index: 2; /* 중첩된 드롭다운을 위에 표시하기 위해 z-index를 증가 */
 }
 
 .nested-dropdown:hover .nested-content {
     display: block;
+    left: 100%; /* 중첩된 드롭다운을 오른쪽에 표시 */
+    top: 0;
 }
