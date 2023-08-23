@@ -3,7 +3,7 @@
 .topbar {
     display: flex;
     justify-content: flex-start; /* 변경된 부분 */
-    align-items: center;
+    align-items:flex-start;
     padding: 10px 5%;
     position: fixed;
     width: 100%;
