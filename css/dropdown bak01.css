@@ -1,0 +1,38 @@
+/* ... 기존의 다른 스타일 ... */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content, .nested-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a, .nested-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Nested dropdown styles */
+
+.nested-dropdown {
+    position: relative;
+}
+
+.nested-content {
+    z-index: 2; /* 중첩된 드롭다운을 위에 표시하기 위해 z-index를 증가 */
+}
+
+/* 추가: Active 클래스에 대한 스타일 */
+.dropdown-content.active, .nested-content.active {
+    display: block;
+}
