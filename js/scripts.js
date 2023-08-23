@@ -55,6 +55,4 @@ document.addEventListener('DOMContentLoaded', function() {
     $("#header").load("partials/header.html");
     $("#footer").load("partials/footer.html");
 
-});  // <--- 중괄호와 괄호를 추가하여 이벤트 리스너를 닫습니다.
-
-// You can continue with other scripts if any
+}); 
