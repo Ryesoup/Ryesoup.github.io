@@ -11,15 +11,16 @@ document.addEventListener('DOMContentLoaded', function() {
         // Overlay for mobile menu
         let overlay = document.querySelector('.overlay');
 
-        navToggle.addEventListener('click', function() {
-            overlay.classList.toggle('active');
-        });
+        if (overlay) {
+            navToggle.addEventListener('click', function() {
+                overlay.classList.toggle('active');
+            });
 
-        overlay.addEventListener('click', function() {
-            overlay.classList.remove('active');
-            mainNav.classList.remove('active');
-        });
-    }
+            overlay.addEventListener('click', function() {
+                overlay.classList.remove('active');
+                mainNav.classList.remove('active');
+            });
+        }
 
     // Dropdown functionality
     let dropdownTriggers = document.querySelectorAll('.dropdown > a, .nested-dropdown > a');
