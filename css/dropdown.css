@@ -1,3 +1,5 @@
+/* dropdown.css */
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -21,5 +23,26 @@
 }
 
 .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Nested dropdown styles */
+
+.nested-dropdown {
+    position: relative;
+}
+
+.nested-content {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+.nested-dropdown:hover .nested-content {
     display: block;
 }
