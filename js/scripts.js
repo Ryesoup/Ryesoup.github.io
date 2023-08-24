@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let navToggle = document.getElementById('nav-toggle');
     let mainNav = document.getElementById('main-nav');
 
-    if(navToggle && mainNav) {
+    if (navToggle && mainNav) {
         navToggle.addEventListener('click', function() {
             mainNav.classList.toggle('active');
         });
@@ -24,17 +24,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Dropdown functionality
-    let dropdowns = document.querySelectorAll('.dropdown, .nested-dropdown');
+    const dropdowns = document.querySelectorAll('.dropdown');
+    const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
 
-    dropdowns.forEach(function(dropdown) {
+    dropdowns.forEach((dropdown) => {
         dropdown.addEventListener('mouseover', function() {
-            let content = this.querySelector('.dropdown-content, .nested-content');
-            if (content) content.classList.add('active');
+            this.querySelector('.dropdown-content').classList.add('active');
+            overlay.style.display = 'block';  // overlay display 변경 추가
         });
 
         dropdown.addEventListener('mouseout', function() {
-            let content = this.querySelector('.dropdown-content, .nested-content');
-            if (content) content.classList.remove('active');
+            this.querySelector('.dropdown-content').classList.remove('active');
+            overlay.style.display = 'none';  // overlay display 변경 추가
+        });
+    });
+
+    nestedDropdowns.forEach((nestedDropdown) => {
+        nestedDropdown.addEventListener('mouseover', function() {
+            this.querySelector('.nested-content').classList.add('active');
+        });
+
+        nestedDropdown.addEventListener('mouseout', function() {
+            this.querySelector('.nested-content').classList.remove('active');
         });
     });
 

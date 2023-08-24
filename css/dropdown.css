@@ -32,6 +32,10 @@
 .dropdown-content a:hover {
     background-color: #3a3a3c; /* 애플 메뉴 항목의 호버 배경색과 유사 */
 }
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 
 
 
