@@ -9,6 +9,7 @@
     display: none;
     position: absolute;
     background-color: #1d1d1f; /* 애플 메뉴의 어두운 배경색과 유사 */
+    border: 1px solid #e0e0e0; /* Grey border */
     min-width: 200px; /* 너비를 약간 늘립니다 */
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -18,7 +19,7 @@
 }
 
 .dropdown-content a {
-    color: white;
+    color: black;
     padding: 15px 20px; /* 패딩을 늘려 항목 간격을 크게 합니다 */
     text-decoration: none;
     display: block;
@@ -37,6 +38,12 @@
 
 .nested-dropdown {
     position: relative;
+}
+/* Nested dropdown styles (If you have multi-level dropdowns) */
+.nested-dropdown .dropdown-content {
+    left: 100%;
+    top: 0;
+    margin-left: 1px; /* To create a "separation" effect */
 }
 
 .nested-content {
@@ -66,5 +73,14 @@
 }
 
 .nested-dropdown:hover .nested-content {
+    display: block;
+}
+/* Extra styles for the trigger element (optional) */
+.dropdown > a, .nested-dropdown > a {
+    cursor: pointer;
+}
+
+/* When dropdown content is active (shown) */
+.dropdown-content.active, .nested-content.active {
     display: block;
 }
