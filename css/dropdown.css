@@ -10,7 +10,10 @@
     position: absolute;
     background-color: #1d1d1f; /* 애플 메뉴의 어두운 배경색과 유사 */
     border: 1px solid #e0e0e0; /* Grey border */
-    min-width: 200px; /* 너비를 약간 늘립니다 */
+    
+    width: 80%;  /* 기본적으로 화면의 80%를 차지 */
+    max-width: 300px;  /* 드롭다운의 최대 크기 */
+    min-width: 160px;  /* 드롭다운의 최소 크기 */
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -83,4 +86,24 @@
 /* When dropdown content is active (shown) */
 .dropdown-content.active, .nested-content.active {
     display: block;
+}
+/* 화면의 크기가 768px 미만일 때의 스타일 */
+@media (max-width: 767px) {
+    .dropdown-content {
+        width: 100%;  /* 화면의 너비 전체를 차지 */
+    }
+}
+
+/* 화면의 크기가 768px 이상 992px 미만일 때의 스타일 */
+@media (min-width: 768px) and (max-width: 991px) {
+    .dropdown-content {
+        width: 90%;  /* 화면의 90%를 차지 */
+    }
+}
+
+/* 화면의 크기가 992px 이상일 때의 스타일 */
+@media (min-width: 992px) {
+    .dropdown-content {
+        width: 80%;  /* 화면의 80%를 차지 */
+    }
 }
