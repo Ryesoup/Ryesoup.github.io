@@ -33,9 +33,7 @@
     background-color: #3a3a3c; /* 애플 메뉴 항목의 호버 배경색과 유사 */
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
-}
+
 
 /* Nested dropdown styles */
 
@@ -75,9 +73,7 @@
     background-color: #3a3a3c; /* 애플 메뉴 항목의 호버 배경색과 유사 */
 }
 
-.nested-dropdown:hover .nested-content {
-    display: block;
-}
+
 /* Extra styles for the trigger element (optional) */
 .dropdown > a, .nested-dropdown > a {
     cursor: pointer;
@@ -106,4 +102,9 @@
     .dropdown-content {
         width: 80%;  /* 화면의 80%를 차지 */
     }
+}
+
+/* 추가할 코드 */
+.dropdown-content.active, .nested-content.active {
+    display: block;
 }
