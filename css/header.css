@@ -46,3 +46,6 @@
     background-color: white;
     transition: transform 0.3s;
 }
+.topbar:hover .dropdown .dropdown-content {
+    display: block;
+}

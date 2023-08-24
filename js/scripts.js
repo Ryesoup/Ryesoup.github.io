@@ -24,21 +24,17 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Dropdown functionality
-    let dropdownTriggers = document.querySelectorAll('.dropdown > a, .nested-dropdown > a');
+    const topbar = document.querySelector('.topbar');
+    topbar.addEventListener('mouseover', function() {
+        let dropdownContents = topbar.querySelectorAll('.dropdown-content, .nested-content');
+        dropdownContents.forEach(content => content.classList.add('active'));
+    });
 
-    dropdownTriggers.forEach(function(trigger) {
-        trigger.addEventListener('click', function(event) {
-            event.preventDefault();
-            let content = this.nextElementSibling;
-            if (content.classList.contains('active')) {
-                content.classList.remove('active');
-            } else {
-                document.querySelectorAll('.dropdown-content.active, .nested-content.active').forEach(function(activeContent) {
-                    activeContent.classList.remove('active');
-                });
-                content.classList.add('active');
-            }
-        });
+    document.addEventListener('click', function(event) {
+        if (!topbar.contains(event.target)) {
+            let dropdownContents = topbar.querySelectorAll('.dropdown-content, .nested-content');
+            dropdownContents.forEach(content => content.classList.remove('active'));
+        }
     });
 
     // Scroll event for topbar
@@ -55,4 +51,4 @@ document.addEventListener('DOMContentLoaded', function() {
     $("#header").load("partials/header.html");
     $("#footer").load("partials/footer.html");
 
-}); 
+});
