@@ -23,9 +23,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Scroll event for topbar
+    window.onscroll = function() {
+        const topbar = document.querySelector('.topbar');
+        if (window.scrollY > 50) {
+            topbar.classList.add('scrolled');
+        } else {
+            topbar.classList.remove('scrolled');
+        }
+    };
+
+    // Loading external HTML components
+    $("#header").load("partials/header.html", function() {
+        bindDropdownEvents();
+    });
+    $("#footer").load("partials/footer.html");
+});
+
+function bindDropdownEvents() {
     // Dropdown functionality
     const dropdowns = document.querySelectorAll('.dropdown');
     const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
+    const overlay = document.querySelector('.overlay');  // overlay outside the function
 
     dropdowns.forEach((dropdown) => {
         dropdown.addEventListener('mouseover', function() {
@@ -48,18 +67,4 @@ document.addEventListener('DOMContentLoaded', function() {
             this.querySelector('.nested-content').classList.remove('active');
         });
     });
-
-    // Scroll event for topbar
-    window.onscroll = function() {
-        const topbar = document.querySelector('.topbar');
-        if (window.scrollY > 50) {
-            topbar.classList.add('scrolled');
-        } else {
-            topbar.classList.remove('scrolled');
-        }
-    };
-
-    // Loading external HTML components
-    $("#header").load("partials/header.html");
-    $("#footer").load("partials/footer.html");
-});
+}
