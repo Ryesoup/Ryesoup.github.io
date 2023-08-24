@@ -24,17 +24,18 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Dropdown functionality
-    const topbar = document.querySelector('.topbar');
-    topbar.addEventListener('mouseover', function() {
-        let dropdownContents = topbar.querySelectorAll('.dropdown-content, .nested-content');
-        dropdownContents.forEach(content => content.classList.add('active'));
-    });
+    let dropdowns = document.querySelectorAll('.dropdown, .nested-dropdown');
 
-    document.addEventListener('click', function(event) {
-        if (!topbar.contains(event.target)) {
-            let dropdownContents = topbar.querySelectorAll('.dropdown-content, .nested-content');
-            dropdownContents.forEach(content => content.classList.remove('active'));
-        }
+    dropdowns.forEach(function(dropdown) {
+        dropdown.addEventListener('mouseover', function() {
+            let content = this.querySelector('.dropdown-content, .nested-content');
+            if (content) content.classList.add('active');
+        });
+
+        dropdown.addEventListener('mouseout', function() {
+            let content = this.querySelector('.dropdown-content, .nested-content');
+            if (content) content.classList.remove('active');
+        });
     });
 
     // Scroll event for topbar
@@ -50,5 +51,4 @@ document.addEventListener('DOMContentLoaded', function() {
     // Loading external HTML components
     $("#header").load("partials/header.html");
     $("#footer").load("partials/footer.html");
-
 });
