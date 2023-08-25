@@ -41,20 +41,23 @@ document.addEventListener('DOMContentLoaded', function() {
     $("#footer").load("partials/footer.html");
 });
 
-console.log('bindDropdownEvents is called');
-if (!document.querySelector('.topbar')) {
-    console.log('Topbar is not loaded yet');
-    return;
-}
+
 
 function bindDropdownEvents() {
+    console.log('bindDropdownEvents is called');
+
+    if (!document.querySelector('.topbar')) {
+        console.log('Topbar is not loaded yet');
+        return;
+    }
+
     const mainDropdown = document.querySelector('.dropdown');
     const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
     const overlay = document.querySelector('.overlay');
 
     if (!mainDropdown || !overlay) {
         console.error('Required elements not found.');
-        return; // 함수 내부이므로 return 문 사용 가능
+        return;
     }
 
     mainDropdown.addEventListener('mouseenter', function() {
@@ -80,4 +83,3 @@ function bindDropdownEvents() {
         });
     });
 }
-
