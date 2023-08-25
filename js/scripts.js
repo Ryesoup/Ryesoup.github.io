@@ -64,10 +64,11 @@ function bindDropdownEvents() {
 
     nestedDropdowns.forEach((nestedDropdown) => {
         nestedDropdown.addEventListener('mouseover', function() {
-            // 특정 nested-dropdown을 hover할 때 다른 nested-dropdowns를 숨김
-            dropdowns[0].querySelectorAll('.nested-content').forEach(nestedContent => {
-                nestedContent.classList.remove('active');
+            // 모든 nested-dropdowns 항목들을 비활성화
+            nestedDropdowns.forEach(nd => {
+                nd.querySelector('.nested-content').classList.remove('active');
             });
+            // 현재 nested-dropdown 항목만 활성화
             this.querySelector('.nested-content').classList.add('active');
         });
 
@@ -76,3 +77,4 @@ function bindDropdownEvents() {
         });
     });
 }
+
