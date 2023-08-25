@@ -35,8 +35,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Loading external HTML components
     $("#header").load("partials/header.html", function() {
-        bindDropdownEvents();
+        setTimeout(bindDropdownEvents, 50);  // slight delay to ensure all elements are accessible
     });
+    
     $("#footer").load("partials/footer.html");
 });
 
@@ -44,6 +45,8 @@ function bindDropdownEvents() {
     const mainDropdown = document.querySelector('.dropdown');
     const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
     const overlay = document.querySelector('.overlay');  
+
+    if (!mainDropdown || !overlay) return;
 
     mainDropdown.addEventListener('mouseenter', function() {
         this.querySelectorAll('.nested-content').forEach(nestedContent => {
@@ -68,3 +71,4 @@ function bindDropdownEvents() {
         });
     });
 }
+
