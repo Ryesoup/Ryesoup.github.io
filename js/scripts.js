@@ -41,7 +41,25 @@ document.addEventListener('DOMContentLoaded', function() {
     $("#footer").load("partials/footer.html");
 });
 
-function bindDropdownEvents() {
+console.log('bindDropdownEvents is called');
+if (!document.querySelector('.topbar')) {
+    console.log('Topbar is not loaded yet');
+    return;
+}
+
+function bindDropdownEvents(retryCount = 0) {
+    console.log('bindDropdownEvents is called');
+
+    if (!document.querySelector('.topbar')) {
+        if (retryCount < 10) {
+            console.log('Topbar is not loaded yet. Retrying...');
+            setTimeout(() => bindDropdownEvents(retryCount + 1), 100);
+        } else {
+            console.log('Failed to bind events after multiple attempts');
+        }
+        return;
+    }
+
     const mainDropdown = document.querySelector('.dropdown');
     const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
     const overlay = document.querySelector('.overlay');  
@@ -71,4 +89,3 @@ function bindDropdownEvents() {
         });
     });
 }
-
