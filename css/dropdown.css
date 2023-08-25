@@ -85,7 +85,7 @@
 
 /* When dropdown content is active (shown) */
 .dropdown-content.active, .nested-content.active {
-    display: block;
+    /* display: block; */
 }
 /* 화면의 크기가 768px 미만일 때의 스타일 */
 @media (max-width: 767px) {
