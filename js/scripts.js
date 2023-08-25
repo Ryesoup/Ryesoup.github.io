@@ -41,25 +41,33 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function bindDropdownEvents() {
-    // Dropdown functionality
     const dropdowns = document.querySelectorAll('.dropdown');
     const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
-    const overlay = document.querySelector('.overlay');  // overlay outside the function
+    const overlay = document.querySelector('.overlay');  
 
     dropdowns.forEach((dropdown) => {
         dropdown.addEventListener('mouseover', function() {
-            this.querySelector('.dropdown-content').classList.add('active');
-            overlay.style.display = 'block';  // overlay display 변경 추가
+            // Blog를 hover할 때 모든 nested-dropdowns를 표시
+            this.querySelectorAll('.nested-content').forEach(nestedContent => {
+                nestedContent.classList.add('active');
+            });
+            overlay.style.display = 'block';
         });
 
         dropdown.addEventListener('mouseout', function() {
-            this.querySelector('.dropdown-content').classList.remove('active');
-            overlay.style.display = 'none';  // overlay display 변경 추가
+            this.querySelectorAll('.nested-content').forEach(nestedContent => {
+                nestedContent.classList.remove('active');
+            });
+            overlay.style.display = 'none';
         });
     });
 
     nestedDropdowns.forEach((nestedDropdown) => {
         nestedDropdown.addEventListener('mouseover', function() {
+            // 특정 nested-dropdown을 hover할 때 다른 nested-dropdowns를 숨김
+            dropdowns[0].querySelectorAll('.nested-content').forEach(nestedContent => {
+                nestedContent.classList.remove('active');
+            });
             this.querySelector('.nested-content').classList.add('active');
         });
 
