@@ -1,19 +1,9 @@
 function bindDropdownEvents() {
-    console.log('bindDropdownEvents is called');
-
-    if (!document.querySelector('.topbar')) {
-        console.log('Topbar is not loaded yet');
-        return;
-    }
-
     const mainDropdown = document.querySelector('.dropdown');
     const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
-    const overlay = document.querySelector('.overlay');
+    const overlay = document.querySelector('.overlay');  
 
-    if (!mainDropdown || !overlay) {
-        console.error('Required elements not found.');
-        return;
-    }
+    if (!mainDropdown || !overlay) return;
 
     mainDropdown.addEventListener('mouseenter', function() {
         this.querySelectorAll('.nested-content').forEach(nestedContent => {

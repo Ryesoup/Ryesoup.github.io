@@ -34,12 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Loading external HTML components
-    $("#header").load("partials/header.html", function() {
-        setTimeout(bindDropdownEvents, 50);  // slight delay to ensure all elements are accessible
+    $("#common-head").load("/partials/common-head.html");
+    $("#common-scripts").load("/partials/common-scripts.html");
+    $("#header").load("/partials/header.html", function() {
+        setTimeout(bindDropdownEvents, 50);
     });
-    
-    $("#footer").load("partials/footer.html");
+    $("#footer").load("/partials/footer.html");
 });
-
-
-
