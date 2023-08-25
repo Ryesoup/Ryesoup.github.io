@@ -8,111 +8,100 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #1d1d1f; /* 애플 메뉴의 어두운 배경색과 유사 */
-    border: 1px solid #e0e0e0; /* Grey border */
-    
-    /* width: 80%;  기본적으로 화면의 80%를 차지 */
-    /* max-width: 300px;  드롭다운의 최대 크기 */
-    /* min-width: 160px;  드롭다운의 최소 크기 */
-    overflow: auto;
+    background-color: #1d1d1f; 
+    border: 1px solid #e0e0e0; 
+    width: 80%;  
+    max-width: 300px;  
+    min-width: 160px;
+    overflow: auto;  
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    border-radius: 5px; /* 모서리를 둥글게 합니다 */
-    padding: 10px 0; /* 상하 패딩 추가 */
+    border-radius: 5px; 
+    padding: 10px 0; 
+    max-height: 300px; /* 최대 높이 설정 */
+    overflow-y: auto; /* 스크롤바 설정 */
 }
 
 .dropdown-content a {
-    width: 80%;  /* 기본적으로 화면의 80%를 차지 */
-    max-width: 300px;  /* 드롭다운의 최대 크기 */
-    min-width: 160px;  /* 드롭다운의 최소 크기 */
-    overflow: auto;
     color: black;
-    padding: 15px 20px; /* 패딩을 늘려 항목 간격을 크게 합니다 */
+    padding: 15px 20px; 
     text-decoration: none;
     display: block;
-    transition: background-color 0.2s; /* 호버 효과를 위한 트랜지션 추가 */
+    transition: background-color 0.2s;
 }
 
 .dropdown-content a:hover {
-    background-color: #3a3a3c; /* 애플 메뉴 항목의 호버 배경색과 유사 */
+    background-color: #3a3a3c;
 }
+
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
-
-
 
 /* Nested dropdown styles */
 
 .nested-dropdown {
     position: relative;
 }
-/* Nested dropdown styles (If you have multi-level dropdowns) */
+
 .nested-dropdown .dropdown-content {
     left: 100%;
     top: 0;
-    margin-left: 1px; /* To create a "separation" effect */
+    margin-left: 1px;
 }
 
 .nested-content {
     display: none;
     position: absolute;
-    background-color: #1d1d1f; /* 애플 메뉴의 어두운 배경색과 유사 */
-    min-width: 200px; /* 너비를 약간 늘립니다 */
+    background-color: #1d1d1f;
+    min-width: 200px;
     overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 2; /* 중첩된 드롭다운을 위에 표시하기 위해 z-index를 증가 */
-    border-radius: 5px; /* 모서리를 둥글게 합니다 */
-    padding: 10px 0; /* 상하 패딩 추가 */
-    left: 100%; /* 중첩된 드롭다운을 오른쪽에 표시 */
+    z-index: 2;
+    border-radius: 5px;
+    padding: 10px 0;
+    left: 100%;
     top: 0;
 }
 
 .nested-content a {
     color: white;
-    padding: 15px 20px; /* 패딩을 늘려 항목 간격을 크게 합니다 */
+    padding: 15px 20px;
     text-decoration: none;
     display: block;
-    transition: background-color 0.2s; /* 호버 효과를 위한 트랜지션 추가 */
+    transition: background-color 0.2s;
 }
 
 .nested-content a:hover {
-    background-color: #3a3a3c; /* 애플 메뉴 항목의 호버 배경색과 유사 */
+    background-color: #3a3a3c;
 }
 
-
-/* Extra styles for the trigger element (optional) */
 .dropdown > a, .nested-dropdown > a {
     cursor: pointer;
 }
 
-/* When dropdown content is active (shown) */
 .dropdown-content.active, .nested-content.active {
     display: block;
 }
-/* 화면의 크기가 768px 미만일 때의 스타일 */
+
 @media (max-width: 767px) {
     .dropdown-content {
-        width: 100%;  /* 화면의 너비 전체를 차지 */
+        width: 100%;
     }
 }
 
-/* 화면의 크기가 768px 이상 992px 미만일 때의 스타일 */
 @media (min-width: 768px) and (max-width: 991px) {
     .dropdown-content {
-        width: 90%;  /* 화면의 90%를 차지 */
+        width: 90%;
     }
 }
 
-/* 화면의 크기가 992px 이상일 때의 스타일 */
 @media (min-width: 992px) {
     .dropdown-content {
-        width: 80%;  /* 화면의 80%를 차지 */
+        width: 80%;
     }
 }
 
-/* 추가할 코드 */
 .dropdown-content.active, .nested-content.active {
     display: block;
 }
