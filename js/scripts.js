@@ -38,6 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(bindDropdownEvents, 50);  // slight delay to ensure all elements are accessible
     });
     $("#footer").load("partials/footer.html");
-    $("head").load("/path/to/common-head.html");
-    $("body").append($('<div>').load("/path/to/common-scripts.html"));
+    $("head").load("/js/common-head.html");
+    $("body").append($('<div>').load("/js/common-scripts.html"));
 });
