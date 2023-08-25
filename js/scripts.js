@@ -34,10 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Loading external HTML components
-    $("#common-head").load("/partials/common-head.html");
-    $("#common-scripts").load("/partials/common-scripts.html");
-    $("#header").load("/partials/header.html", function() {
-        setTimeout(bindDropdownEvents, 50);
+    $("#header").load("partials/header.html", function() {
+        setTimeout(bindDropdownEvents, 50);  // slight delay to ensure all elements are accessible
     });
-    $("#footer").load("/partials/footer.html");
+    $("#footer").load("partials/footer.html");
+    $("head").load("/path/to/common-head.html");
+    $("body").append($('<div>').load("/path/to/common-scripts.html"));
 });
