@@ -47,24 +47,15 @@ if (!document.querySelector('.topbar')) {
     return;
 }
 
-function bindDropdownEvents(retryCount = 0) {
-    console.log('bindDropdownEvents is called');
-
-    if (!document.querySelector('.topbar')) {
-        if (retryCount < 10) {
-            console.log('Topbar is not loaded yet. Retrying...');
-            setTimeout(() => bindDropdownEvents(retryCount + 1), 100);
-        } else {
-            console.log('Failed to bind events after multiple attempts');
-        }
-        return;
-    }
-
+function bindDropdownEvents() {
     const mainDropdown = document.querySelector('.dropdown');
     const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
-    const overlay = document.querySelector('.overlay');  
+    const overlay = document.querySelector('.overlay');
 
-    if (!mainDropdown || !overlay) return;
+    if (!mainDropdown || !overlay) {
+        console.error('Required elements not found.');
+        return; // 함수 내부이므로 return 문 사용 가능
+    }
 
     mainDropdown.addEventListener('mouseenter', function() {
         this.querySelectorAll('.nested-content').forEach(nestedContent => {
@@ -89,3 +80,4 @@ function bindDropdownEvents(retryCount = 0) {
         });
     });
 }
+
