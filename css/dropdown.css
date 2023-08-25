@@ -13,13 +13,10 @@
     width: auto;  /* 자동 넓이 설정 */
     max-width: 300px;  
     min-width: 160px; 
-    overflow: auto;  
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 5px; 
     padding: 10px 0; 
-    max-height: 300px; /* 최대 높이 설정 */
-    overflow-y: auto; /* 스크롤바 설정 */
 }
 
 .dropdown-content a {
@@ -55,7 +52,6 @@
     position: absolute;
     background-color: #1d1d1f;
     min-width: 200px;
-    overflow: auto;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 2;
     border-radius: 5px;
