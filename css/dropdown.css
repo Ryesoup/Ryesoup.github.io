@@ -22,6 +22,10 @@
 }
 
 .dropdown-content a {
+    width: 80%;  /* 기본적으로 화면의 80%를 차지 */
+    max-width: 300px;  /* 드롭다운의 최대 크기 */
+    min-width: 160px;  /* 드롭다운의 최소 크기 */
+    overflow: auto;
     color: black;
     padding: 15px 20px; /* 패딩을 늘려 항목 간격을 크게 합니다 */
     text-decoration: none;
@@ -85,7 +89,7 @@
 
 /* When dropdown content is active (shown) */
 .dropdown-content.active, .nested-content.active {
-    /* display: block; */
+    display: block;
 }
 /* 화면의 크기가 768px 미만일 때의 스타일 */
 @media (max-width: 767px) {
