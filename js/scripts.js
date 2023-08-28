@@ -34,6 +34,6 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Loading external HTML components
-    $("#header").load("partials/header.html");
-    $("#footer").load("partials/footer.html");
+    $("#header").load("/partials/header.html");
+    $("#footer").load("/partials/footer.html");
 });
