@@ -1,25 +1,40 @@
 function bindDropdownEvents() {
-    const mainDropdown = document.querySelector('.dropdown');
     const nestedDropdowns = document.querySelectorAll('.nested-dropdown');
     const overlay = document.querySelector('.overlay');  
 
-    if (!mainDropdown || !overlay) return;
-
-    mainDropdown.addEventListener('mouseenter', function() {
-        overlay.style.display = 'block';
-    });
-
-    mainDropdown.addEventListener('mouseleave', function() {
-        overlay.style.display = 'none';
-    });
-
     nestedDropdowns.forEach((nestedDropdown) => {
         nestedDropdown.addEventListener('mouseenter', function() {
-            this.querySelector('.nested-content').classList.add('active');
+            // 모든 .nested-content를 비활성화합니다.
+            nestedDropdowns.forEach((dropdown) => {
+                const nestedContent = dropdown.querySelector('.nested-content');
+                if (nestedContent) {
+                    nestedContent.classList.remove('active');
+                }
+            });
+
+            // 현재 .nested-content만 활성화합니다.
+            const currentNestedContent = this.querySelector('.nested-content');
+            if (currentNestedContent) {
+                currentNestedContent.classList.add('active');
+            }
+
+            // 오버레이를 활성화합니다.
+            if (overlay) {
+                overlay.style.display = 'block';
+            }
         });
 
         nestedDropdown.addEventListener('mouseleave', function() {
-            this.querySelector('.nested-content').classList.remove('active');
+            // 현재 .nested-content를 비활성화합니다.
+            const currentNestedContent = this.querySelector('.nested-content');
+            if (currentNestedContent) {
+                currentNestedContent.classList.remove('active');
+            }
+
+            // 오버레이를 비활성화합니다.
+            if (overlay) {
+                overlay.style.display = 'none';
+            }
         });
     });
 }

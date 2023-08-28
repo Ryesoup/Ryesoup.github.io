@@ -31,9 +31,9 @@
     background-color: #3a3a3c;
 }
 
-/* .dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content {
     display: block;
-} */
+}
 
 /* Nested dropdown styles */
 
@@ -77,6 +77,11 @@
 }
 
 .dropdown-content.active, .nested-content.active {
+    display: block;
+}
+
+/* 추가된 코드 */
+.nested-content.active {
     display: block;
 }
 
