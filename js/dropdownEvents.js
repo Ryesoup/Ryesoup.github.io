@@ -6,16 +6,10 @@ function bindDropdownEvents() {
     if (!mainDropdown || !overlay) return;
 
     mainDropdown.addEventListener('mouseenter', function() {
-        this.querySelectorAll('.nested-content').forEach(nestedContent => {
-            nestedContent.classList.remove('active');  // 모든 중첩된 nested-content를 비활성화
-        });
         overlay.style.display = 'block';
     });
 
     mainDropdown.addEventListener('mouseleave', function() {
-        this.querySelectorAll('.nested-content').forEach(nestedContent => {
-            nestedContent.classList.remove('active');
-        });
         overlay.style.display = 'none';
     });
 
@@ -25,6 +19,10 @@ function bindDropdownEvents() {
                 nestedContent.classList.remove('active');
             });
             this.querySelector('.nested-content').classList.add('active');
+        });
+
+        nestedDropdown.addEventListener('mouseleave', function() {
+            this.querySelector('.nested-content').classList.remove('active');
         });
     });
 }

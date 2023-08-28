@@ -9,6 +9,6 @@
     z-index: 500;
 }
 
-.dropdown:hover ~ .overlay {
+/* /* .dropdown:hover ~ .overlay {
     display: block;
-}
+}  */
