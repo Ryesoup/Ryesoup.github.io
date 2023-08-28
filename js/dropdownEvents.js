@@ -19,3 +19,10 @@ function bindDropdownEvents() {
         overlay.style.display = 'none';
     });
 }
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const nestedContents = document.querySelectorAll('.nested-content');
+    nestedContents.forEach((nestedContent) => {
+        nestedContent.classList.remove('active');
+    });
+});
