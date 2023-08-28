@@ -7,7 +7,7 @@ function bindDropdownEvents() {
 
     mainDropdown.addEventListener('mouseenter', function() {
         this.querySelectorAll('.nested-content').forEach(nestedContent => {
-            nestedContent.classList.add('active');
+            nestedContent.classList.remove('active');  // 모든 중첩된 nested-content를 비활성화
         });
         overlay.style.display = 'block';
     });
