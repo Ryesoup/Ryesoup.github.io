@@ -15,9 +15,6 @@ function bindDropdownEvents() {
 
     nestedDropdowns.forEach((nestedDropdown) => {
         nestedDropdown.addEventListener('mouseenter', function() {
-            mainDropdown.querySelectorAll('.nested-content').forEach(nestedContent => {
-                nestedContent.classList.remove('active');
-            });
             this.querySelector('.nested-content').classList.add('active');
         });
 
