@@ -76,12 +76,8 @@
     cursor: pointer;
 }
 
-.dropdown-content.active, .nested-content.active {
-    display: block;
-}
-
 /* 추가된 코드 */
-.nested-content.active {
+.nested-dropdown:hover .nested-content {
     display: block;
 }
 
@@ -103,6 +99,3 @@
     }
 }
 
-.dropdown-content.active, .nested-content.active {
-    display: block;
-}
