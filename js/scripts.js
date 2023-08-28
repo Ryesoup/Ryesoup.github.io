@@ -34,10 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     // Loading external HTML components
-    $("#header").load("partials/header.html", function() {
+    $("#header").load("/js/common-head.html", function() {
         setTimeout(bindDropdownEvents, 50);  // slight delay to ensure all elements are accessible
     });
-    $("#footer").load("partials/footer.html");
+    $("#footer").load("/js/common-scripts.html");
     $("head").load("/js/common-head.html");
     $("body").append($('<div>').load("/js/common-scripts.html"));
 });
