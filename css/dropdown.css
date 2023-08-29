@@ -48,7 +48,7 @@
 }
 
 .nested-content {
-    display: block;
+    display: none;
     position: absolute;
     background-color: #1d1d1f;
     min-width: 200px;
@@ -78,7 +78,7 @@
 
 /* 추가된 코드 */
 .nested-dropdown:hover .nested-content {
-    display: none;
+    display: block;
 }
 
 @media (max-width: 767px) {
@@ -98,4 +98,9 @@
         width: 80%;
     }
 }
+
+.nested-content.active {
+    display: block;
+}
+
 
