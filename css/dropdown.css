@@ -78,7 +78,7 @@
 
 /* 추가된 코드 */
 .nested-dropdown:hover .nested-content {
-    display: none;
+    display: block;
 }
 
 @media (max-width: 767px) {
