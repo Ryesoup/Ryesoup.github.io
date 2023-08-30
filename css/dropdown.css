@@ -8,20 +8,20 @@
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #1d1d1f; 
-    border: 1px solid #e0e0e0; 
+    background-color: #1d1d1f;
+    border: 1px solid #e0e0e0;
     width: auto;  /* 자동 넓이 설정 */
-    max-width: 300px;  
-    min-width: 160px; 
+    max-width: 300px;
+    min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-    border-radius: 5px; 
-    padding: 10px 0; 
+    border-radius: 5px;
+    padding: 10px 0;
 }
 
 .dropdown-content a {
     color: black;
-    padding: 15px 20px; 
+    padding: 15px 20px;
     text-decoration: none;
     display: block;
     transition: background-color 0.2s;
@@ -76,7 +76,10 @@
     cursor: pointer;
 }
 
-.nested-dropdown:hover .nested-content {
+/* Unique styles for nested dropdowns */
+.coding:hover .coding-content,
+.security:hover .security-content,
+.certification:hover .certification-content {
     display: block;
 }
 
@@ -97,3 +100,8 @@
         width: 80%;
     }
 }
+
+/* 기존의 코드를 제거 */
+/* .nested-dropdown:hover .nested-content {
+    display: block;
+} */
