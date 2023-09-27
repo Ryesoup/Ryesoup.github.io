@@ -25,6 +25,15 @@
     text-decoration: none;
     display: block;
     transition: background-color 0.2s;
+    
+    border: 1px solid #e0e0e0;
+    width: auto;  /* 자동 넓이 설정 */
+    max-width: 300px;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+    
 }
 
 .dropdown-content a:hover {
