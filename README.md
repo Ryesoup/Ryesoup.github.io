@@ -1,6 +1,8 @@
 
 git clone https://github.com/Ryesoup/Ryesoup.github.io.git;
 
+https://ryesoup.github.io
+
 1. git 저장소로 이동
 저장소의 루트 디렉토리로 이동합니다.
 cd path/to/your/repository
